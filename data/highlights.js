@@ -71,6 +71,28 @@ const highlights = [
         '/blockchainevent/blockchain5',
       ],
     },
+    {
+      title: 'ICCSAS 2025',
+      images: [
+        '   ',
+        '/ICCSAS_2025/ICCSAS_20252',
+        '/ICCSAS_2025/ICCSAS_20253',
+        '/ICCSAS_2025/ICCSAS_20254',
+        '/ICCSAS_2025/ICCSAS_20255',
+        '/ICCSAS_2025/ICCSAS_20256',
+        '/ICCSAS_2025/ICCSAS_20257',
+        '/ICCSAS_2025/ICCSAS_20258',
+        '/ICCSAS_2025/ICCSAS_20259',
+        '/ICCSAS_2025/ICCSAS_202510',
+        '/ICCSAS_2025/ICCSAS_202511',
+        '/ICCSAS_2025/ICCSAS_202512',
+        '/ICCSAS_2025/ICCSAS_202513',
+        '/ICCSAS_2025/ICCSAS_202514',
+        '/ICCSAS_2025/ICCSAS_202515',
+        '/ICCSAS_2025/ICCSAS_202516',
+        '/ICCSAS_2025/ICCSAS_202517',
+      ],
+    },
     
 ];
 

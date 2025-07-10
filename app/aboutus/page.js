@@ -9,40 +9,78 @@ import imageKitLoader from '@/libs/imagekitloader';
 import teamMembers from '@/data/teamMembers';
 import mentors from '@/data/mentors';
 import { useRouter } from 'next/navigation';
-import TeamMemberCard from '@/components/TeamMemberCard'; 
-import MentorCard from '@/components/MentorCard'; // Import the MentorCard component
+import TeamMemberCard from '@/components/TeamMemberCard';
+import MentorCard from '@/components/MentorCard';
 
 const AboutUs = () => {
   const [showAllTeamMembers, setShowAllTeamMembers] = useState(false);
-  const [showAllMentors, setShowAllMentors] = useState(false);
   const theme = useTheme();
   const router = useRouter();
 
-  const visibleTeamMembers = showAllTeamMembers ? teamMembers : teamMembers.slice(0, 3); // Display the first 3 members initially
-  const visibleMentors = showAllMentors ? mentors : mentors.slice(0, 3); // Display the first 3 mentors initially
+  const visibleTeamMembers = showAllTeamMembers ? teamMembers : teamMembers.slice(0, 3);
+  const visibleMentors = mentors.slice(0, 5); // Always limit to 5 mentors
 
   return (
-    <Container component={motion.div}
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5 }} 
-    sx={{ width: '100%', my: { xs: 8, sm: 10, md: 12 }, textAlign: 'center' }}>
-      <Box 
-        sx={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}
+    <Container
+      component={motion.div}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      sx={{
+        width: '100%',
+        my: { xs: 8, sm: 10, md: 12 },
+        textAlign: 'center',
+      }}
+    >
+      <Box
+        sx={{
+          textAlign: 'center',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
       >
         <Box my={4}>
-          <Typography variant="body1" align="center" color="textSecondary">Powered By</Typography>
-          <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 1, flexDirection: { xs: 'column', sm: 'row' } }}>
-            <Box sx={{ width: 100, height: 100, borderRadius: '50%', overflow: 'hidden', position: 'relative', border: `2px solid ${theme.palette.primary.main}`, }}>
-              <Image loader={imageKitLoader} src="/logos/collegelogo" alt="B. K. Birla College Logo" layout="fill" objectFit="cover" />
+          <Typography variant="body1" color="textSecondary">Powered By</Typography>
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              gap: 1,
+              flexDirection: { xs: 'column', sm: 'row' },
+            }}
+          >
+            <Box
+              sx={{
+                width: 100,
+                height: 100,
+                overflow: 'visible',
+                position: 'relative',
+                borderRadius: 0,
+                border: 'none',
+              }}
+            >
+              <Image loader={imageKitLoader} src="/College/Collegelogo" alt="B. K. Birla College Logo" layout="fill" objectFit="contain" />
             </Box>
-            <Typography variant="h4" align="center" color="textSecondary">B. K. Birla College of Arts, Science and Commerce</Typography>
+            <Typography variant="h4" color="textSecondary">
+              B. K. Birla College of Arts, Science and Commerce
+            </Typography>
           </Box>
         </Box>
+
         <Box sx={{ width: 300, height: 300, borderRadius: '50%', overflow: 'hidden', position: 'relative', my: 2 }}>
-          <Image loader={imageKitLoader} src={theme.palette.mode === 'light' ? '/logos/logo_with_text_light' : '/logos/logo_with_text_dark'} alt='TechKshetra logo' layout='fill' objectFit='cover' />
+          <Image
+            loader={imageKitLoader}
+            src={theme.palette.mode === 'light' ? '/College/Clublogo1' : '/College/Clublogo1'}
+            alt="TechKshetra logo"
+            layout="fill"
+            objectFit="cover"
+          />
         </Box>
-        <Typography variant="h6" align="center" color="textSecondary" paragraph>
+
+        <Typography variant="h6" color="textSecondary" paragraph>
           Welcome to B. K. Birla College, Kalyan's first CS and IT club of technology, innovation and more...
         </Typography>
       </Box>
@@ -52,11 +90,11 @@ const AboutUs = () => {
         <Grid container spacing={4}>
           {visibleTeamMembers.map((member, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
-              <TeamMemberCard member={member} /> {/* Use the TeamMemberCard component */}
+              <TeamMemberCard member={member} />
             </Grid>
           ))}
         </Grid>
-        <Box mt={4} textAlign="center">
+        <Box mt={4}>
           {!showAllTeamMembers ? (
             <Button
               variant="contained"
@@ -83,10 +121,10 @@ const AboutUs = () => {
 
       <Box mt={6}>
         <Typography variant="h4" gutterBottom>Meet Our Mentors</Typography>
-        <Grid container spacing={4}>
-          {visibleMentors.map((mentor, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
-              <MentorCard mentor={mentor} /> {/* Use the MentorCard component */}
+        <Grid container spacing={2} justifyContent="center">
+          {visibleMentors.slice(0, 2).map((mentor, index) => (
+            <Grid item xs={12} sm={6} md={6} key={index}>
+              <MentorCard mentor={mentor} />
             </Grid>
           ))}
         </Grid>

@@ -52,7 +52,7 @@ function Footer() {
         >
           <Image
             loader={imageKitLoader}
-            src={ mode === 'light' ? '/logos/logolight' : '/logos/logodark' }
+            src={ mode === 'light' ? '/College/Clublogo1' : '/College/Clublogo1' }
             width={50}
             height={50}
             style={logoStyle}

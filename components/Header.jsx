@@ -46,16 +46,13 @@ export default function Header() {
                             <Box 
                                 sx={{
                                     width: 100,
-                                    height: 100,
-                                    borderRadius: '50%',
-                                    overflow: 'hidden',
+                                    height: 140,
                                     position: 'relative',
-                                    border: `2px solid ${theme.palette.primary.main}`,
                                 }}
                             >
                             <Image
                                 loader={imageKitLoader}
-                                src="/logos/collegelogo"
+                                src="/College/Collegelogo"
                                 alt="B. K. Birla College Logo"
                                 layout="fill"
                                 objectFit="cover"

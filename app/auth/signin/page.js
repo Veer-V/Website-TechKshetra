@@ -100,7 +100,7 @@ const SignIn = () => {
           }}
         >
           <Box sx={{ width: 150, height: 150, borderRadius: '50%', overflow: 'hidden', position: 'relative', my: 1 }}>
-            <Image loader={imageKitLoader} src={theme.palette.mode === 'light' ? '/logos/logolight' : '/logos/logodark'} alt='TechKshetra logo' layout='fill' objectFit='cover' />
+            <Image loader={imageKitLoader} src={theme.palette.mode === 'light' ? '/College/Clublogo1' : '/College/Clublogo1'} alt='TechKshetra logo' layout='fill' objectFit='cover' />
           </Box>
 
           <Typography component="h1" variant="h2">

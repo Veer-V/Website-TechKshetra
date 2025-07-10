@@ -93,7 +93,7 @@ function AppAppBar() {
           <Box>
             <Link href='/'>
                 <Image
-                  src={mode === 'light' ? '/logos/logolight' : '/logos/logodark'}
+                  src={mode === 'light' ? '/College/Clublogo1' : '/College/Clublogo1'}
                   loader={imageKitLoader}
                   width={100}
                   height={100}

@@ -15,7 +15,7 @@ const LogoMesh = () => {
 
   const texture = useTexture(
     imageKitLoader({
-      src: '/logos/logodark', // ImageKit path for the logo
+      src: '/College/Clublogo1', // ImageKit path for the logo
       width: 500,
       quality: 90,
     })

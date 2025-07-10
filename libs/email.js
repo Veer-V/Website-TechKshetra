@@ -13,7 +13,7 @@ export async function sendPasswordResetEmail(email, token) {
 
   const resetUrl = `${process.env.NEXTAUTH_URL}/auth/reset-password/${token}`;
 
-  const logoUrl = `https://ik.imagekit.io/uahycsra15/logos/logowithbackground`;
+  const logoUrl = `https://ik.imagekit.io/2c0oz10ww1/College/Clublogo1?updatedAt=1751048332804`;
 
   await transporter.sendMail({
     from: process.env.EMAIL_SERVER_USER,
@@ -54,7 +54,7 @@ export async function sendVerificationEmail(email) {
 
   const verificationUrl = `${process.env.NEXTAUTH_URL}/api/auth/verify?token=${token}&email=${email}`;
 
-  const logoUrl = `https://ik.imagekit.io/uahycsra15/logos/logowithbackground`;
+  const logoUrl = `https://ik.imagekit.io/2c0oz10ww1/College/Clublogo1?updatedAt=1751048332804`;
 
   await transporter.sendMail({
     from: process.env.EMAIL_SERVER_USER,

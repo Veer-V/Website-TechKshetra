@@ -2,21 +2,37 @@ const mentors = [
     { 
       name: 'Saba Shaikh', 
       role: 'Mentor', 
-      imagePath: '/mentors/saba_sheik', 
+      imagePath: '/Mentor/saba_shaikh',
+      description: 'Assistant Professor',
+      Department: 'Department of Information Technology',
       linkedInProfile: 'https://www.linkedin.com/in/saba-shaikh-03a614250?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
     },
-    { 
-      name: 'Neha Chhatwani', 
-      role: 'Mentor', 
-      imagePath: '/mentors/neha_chhatwani', 
-      linkedInProfile: 'https://www.linkedin.com/in/neha-chhatwani-611a62b7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app' 
-    },
-    { 
-      name: 'Pooja Chettiar', 
-      role: 'Mentor', 
-      imagePath: '/mentors/pooja_chettiar', 
-      linkedInProfile: 'https://www.linkedin.com/in/pooja-rasam-36224380?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app' 
-    },
+    {
+      name: 'Anjali Bunker',
+      role: 'Mentor',
+      imagePath: '/Mentor/Anjali_Bunker',
+      description: 'Assistant Professor',
+      Department: 'Department of Information Technology',
+      linkedInProfile: 'https://www.linkedin.com/in/anjali-bunker-548418192/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+    }
   ];
   export default mentors;
-  
+const mentors = [
+    { 
+      name: 'Saba Shaikh', 
+      role: 'Mentor', 
+      imagePath: '/Mentor/saba_shaikh',
+      description: 'Assistant Professor',
+      Department: 'Department of Information Technology',
+      linkedInProfile: 'https://www.linkedin.com/in/saba-shaikh-03a614250?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+    },
+    {
+      name: 'Anjali Bunker',
+      role: 'Mentor',
+      imagePath: '/Mentor/Anjali_Bunker',
+      description: 'Assistant Professor',
+      Department: 'Department of Information Technology',
+      linkedInProfile: 'https://www.linkedin.com/in/anjali-bunker-548418192/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'
+    }
+  ];
+  export default mentors;

@@ -38,9 +38,12 @@ const MentorCard = ({ mentor }) => {
           <Typography variant="body2" color="textSecondary">
             {mentor.role}
           </Typography>
+          <Typography variant="body2" color="textSecondary">
+            {mentor.description}
+          </Typography>
         </Box>
       </Card>
-      
+
       <AnimatePresence>
         {expanded && (
           <motion.div
@@ -82,6 +85,12 @@ const MentorCard = ({ mentor }) => {
                 </Typography>
                 <Typography variant="body2" color="textSecondary">
                   {mentor.role}
+                </Typography>
+                <Typography variant="body2" color="textSecondary">
+                  {mentor.description}
+                </Typography>
+                <Typography variant="body2" color="textSecondary">
+                  {mentor.Department}
                 </Typography>
                 <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1, mt: 2 }}>
                   {mentor.linkedInProfile && (
