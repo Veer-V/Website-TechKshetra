@@ -13,7 +13,6 @@ import Head from 'next/head';
 import { motion, AnimatePresence } from 'framer-motion';
 import { initLenis } from '@/libs/lenis';
 import Preloader from '@/components/Preloader';
-
 export default function RootLayout({ children }) {
   const [loading, setLoading] = useState(true);
   const [showScrollAnimation, setShowScrollAnimation] = useState(false);

@@ -1,7 +1,7 @@
 'use client'
 
 import { Box, Typography, Stack, Container, Button, useTheme } from "@mui/material";
-import {useRouter} from "next/navigation";
+import { useRouter } from "next/navigation";
 import { motion } from 'framer-motion';
 import imageKitLoader from "@/libs/imagekitloader";
 import Image from "next/image";
@@ -11,20 +11,20 @@ export default function Header() {
     const router = useRouter();
     const theme = useTheme();
 
-    return(
+    return (
         <Box
-        component={motion.div}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        id='home' 
-        sx={{
-            width: "100%", 
-            height: "100vh", 
-            display:'flex', 
-            alignItems: 'center', 
-            justifyContent:'center',
-            backgroundColor: 'transparent'
+            component={motion.div}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            id='home'
+            sx={{
+                width: "100%",
+                height: "100vh",
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                backgroundColor: 'transparent'
             }}
         >
             <Container sx={{
@@ -32,48 +32,66 @@ export default function Header() {
                 flexDirection: 'column',
                 alignItems: 'center',
             }}>
-                <Stack spacing={2} useFlexGap sx={{textAlign: 'center'}}>
+                <Stack spacing={2} useFlexGap sx={{ textAlign: 'center' }}>
                     <Box>
                         <Box
                             sx={{
-                                display: 'flex', 
+                                display: 'flex',
                                 flexDirection: 'column',
                                 gap: 1,
                                 alignItems: 'center',
                                 justifyContent: 'center'
                             }}
                         >
-                            <Box 
+                            <Box
                                 sx={{
                                     width: 100,
                                     height: 140,
                                     position: 'relative',
                                 }}
                             >
-                            <Image
-                                loader={imageKitLoader}
-                                src="/College/Collegelogo"
-                                alt="B. K. Birla College Logo"
-                                layout="fill"
-                                objectFit="cover"
-                            />
+                                <Image
+                                    loader={imageKitLoader}
+                                    src="/College/Collegelogo"
+                                    alt="B. K. Birla College Logo"
+                                    layout="fill"
+                                    objectFit="cover"
+                                />
                             </Box>
                             <Typography variant='h4'>
-                            B. K. Birla College of Arts, Science & Commerce
+                                B. K. Birla College of Arts, Science & Commerce
                             </Typography>
                         </Box>
                         <Typography variant='subtitle2' color={'textSecondary'}>
-                        presents
+                            presents
                         </Typography>
                     </Box>
-                    <Box my={{xs: 3, sm: 4}}>
+                    <Box my={{ xs: 3, sm: 4 }}>
                         <Typography variant='h1' >
                             TechKshetra
-                        </Typography> 
+                        </Typography>
                         <Typography variant='subtitle1'>
                             A CS and IT club of technology, innovation and more...
-                        </Typography> 
-                    </Box>  
+                        </Typography>
+                        <Typography variant="body1" sx={{ mt: 1 }}>
+                            Cells under TechKshetra are{' '}
+                            <Button
+                                variant="text"
+                                onClick={() => router.push('/CSI')}
+                                sx={{ textTransform: 'none', color: theme.palette.primary.main }}
+                            >
+                                CSI
+                            </Button>
+                            {' '}and{' '}
+                            <Button
+                                variant="text"
+                                onClick={() => router.push('/cybervulnx')}
+                                sx={{ textTransform: 'none', color: theme.palette.primary.main }}
+                            >
+                                CybervulnX
+                            </Button>
+                        </Typography>
+                    </Box>
                     <Box>
                         <Button variant="contained" onClick={() => router.push('/aboutus')} >
                             Know More

@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState, useMemo, useRef, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
@@ -13,6 +14,8 @@ const EventCalendar = () => {
   const [selectedEvents, setSelectedEvents] = useState([]);
   const cardRefs = useRef({});
   const theme = useTheme();
+  const router = useRouter();
+  const today = new Date();
 
   useEffect(() => {
     if (selectedEvents.length > 0) {
@@ -54,7 +57,16 @@ const EventCalendar = () => {
 
   const handleEventClick = (info) => {
     const clickedEvent = events.find(event => event.id === parseInt(info.event.id));
-    setSelectedEvents([clickedEvent]);
+    if (!clickedEvent) return;
+
+    const eventDate = new Date(clickedEvent.date);
+    if (eventDate < today) {
+      // Navigate to highlights page with event title as query param
+      const encodedTitle = encodeURIComponent(clickedEvent.title);
+      router.push(`/highlights?event=${encodedTitle}`);
+    } else {
+      setSelectedEvents([clickedEvent]);
+    }
   };
 
   return (

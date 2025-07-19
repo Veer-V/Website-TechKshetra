@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Container, Typography, Box, Grid, Button, useTheme } from '@mui/material';
+import { Container, Typography, Box, Grid, Button, useTheme, Paper, Avatar, Collapse } from '@mui/material';
 import EmailIcon from '@mui/icons-material/Email';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
@@ -11,6 +11,69 @@ import mentors from '@/data/mentors';
 import { useRouter } from 'next/navigation';
 import TeamMemberCard from '@/components/TeamMemberCard';
 import MentorCard from '@/components/MentorCard';
+
+const founders = [
+  { name: 'Ms Esmita Gupta', initials: 'EG', imageUrl: 'https://ik.imagekit.io/2c0oz10ww1/Mentor/EsmitaGupta_U4zZG_izw?updatedAt=1752890071527' },
+  { name: 'Ms Anjali Bunker', initials: 'AB', imageUrl: 'https://ik.imagekit.io/2c0oz10ww1/Mentor/Anjali_Bunker?updatedAt=1751210065486' },
+];
+
+
+const AboutTechKshetra = () => {
+  const [expanded, setExpanded] = useState(false);
+
+  return (
+    <Paper elevation={3} sx={{ p: 3, maxWidth: 900, margin: 'auto', textAlign: 'justify' }}>
+      <Typography variant="body1" paragraph>
+        On the occasion of Teacher’s Day, 5th September 2023, the IT Club “TechKshetra – Birla” was born with a powerful vision — to promote and share the wonders of technology beyond the boundaries of the classroom. Our goal was simple yet impactful: to create a space where both tech and non-tech students could explore the world of technology through fun, interactive, and engaging experiences.
+      </Typography>
+      <Collapse in={expanded} timeout="auto" unmountOnExit>
+        <Typography variant="body1" paragraph>
+          Since then, for over two years, we have proudly conducted a wide range of activities — from workshops, hackathons, seminars, debates, and ideathons to cultural events infused with a tech twist. Each initiative has helped students grow, connect, and unleash their potential in a vibrant, ever-evolving tech landscape.
+        </Typography>
+        <Typography variant="body1" paragraph>
+          In 2024, embracing growth and collaboration, TechKshetra took a monumental step forward by merging with the Computer Science Department. This integration infused the club with greater energy, resources, and diversity — opening a new chapter in our journey. Together, both departments united to redefine our college’s tech culture, fostering an inclusive environment that champions learning, leadership, and limitless innovation.
+        </Typography>
+      </Collapse>
+      <Button onClick={() => setExpanded(!expanded)} sx={{ mt: 1 }}>
+        {expanded ? 'Read Less' : 'Read More'}
+      </Button>
+    </Paper>
+  );
+};
+
+const FoundersSection = () => {
+  return (
+    <Box sx={{ display: 'flex', justifyContent: 'center', gap: 4, my: 4, flexWrap: 'wrap' }}>
+      {founders.map((founder) => (
+        <Box key={founder.name} sx={{ textAlign: 'center' }}>
+          {founder.imageUrl ? (
+            <img
+              src={founder.imageUrl}
+              alt={founder.name}
+              style={{ width: 120, height: 120, borderRadius: '50%', objectFit: 'cover', margin: '0 auto' }}
+            />
+          ) : (
+            <Avatar
+              sx={{
+                width: 120,
+                height: 120,
+                bgcolor: 'primary.main',
+                fontSize: 40,
+                fontWeight: 'bold',
+                mx: 'auto',
+              }}
+            >
+              {founder.initials}
+            </Avatar>
+          )}
+          <Typography variant="subtitle1" color="textPrimary" sx={{ mt: 1 }}>
+            {founder.name}
+          </Typography>
+        </Box>
+      ))}
+    </Box>
+  );
+};
 
 const AboutUs = () => {
   const [showAllTeamMembers, setShowAllTeamMembers] = useState(false);
@@ -80,9 +143,15 @@ const AboutUs = () => {
           />
         </Box>
 
+        {/* Founders Section at the top */}
+        <FoundersSection />
+
         <Typography variant="h6" color="textSecondary" paragraph>
           Welcome to B. K. Birla College, Kalyan's first CS and IT club of technology, innovation and more...
         </Typography>
+
+        {/* About TechKshetra Section with Read More toggle */}
+        <AboutTechKshetra />
       </Box>
 
       <Box mt={6}>
