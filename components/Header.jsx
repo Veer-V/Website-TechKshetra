@@ -73,24 +73,6 @@ export default function Header() {
                         <Typography variant='subtitle1'>
                             A CS and IT club of technology, innovation and more...
                         </Typography>
-                        <Typography variant="body1" sx={{ mt: 1 }}>
-                            Cells under TechKshetra are{' '}
-                            <Button
-                                variant="text"
-                                onClick={() => router.push('/CSI')}
-                                sx={{ textTransform: 'none', color: theme.palette.primary.main }}
-                            >
-                                CSI
-                            </Button>
-                            {' '}and{' '}
-                            <Button
-                                variant="text"
-                                onClick={() => router.push('/cybervulnx')}
-                                sx={{ textTransform: 'none', color: theme.palette.primary.main }}
-                            >
-                                CybervulnX
-                            </Button>
-                        </Typography>
                     </Box>
                     <Box>
                         <Button variant="contained" onClick={() => router.push('/aboutus')} >
